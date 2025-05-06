@@ -21,7 +21,8 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             terraform
-            deno
+            go
+            just
           ];
         };
       }
