@@ -46,7 +46,7 @@ def lambda_handler(event, context):
     print("Event received:", json.dumps(event))
 
     route_key = event.get("routeKey", "")
-    path = event.get("path", "")
+    path = event.get("rawPath", "")
 
     if route_key == "POST /create":
         try:
@@ -92,6 +92,7 @@ def lambda_handler(event, context):
     # GET /{shortId} endpoint
     elif route_key.startswith("GET /"):
         try:
+            print("Full path: ", path)
             short_id = path.split("/")[-1]
 
             if not short_id:
