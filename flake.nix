@@ -21,8 +21,7 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             terraform
-            go
-            just
+            python313
           ];
         };
       }
