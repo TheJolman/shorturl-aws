@@ -1,7 +1,7 @@
 resource "aws_dynamodb_table" "url-dynamodb" {
-  name = "Urls"
+  name         = "Urls"
   billing_mode = "PAY_PER_REQUEST"
-  hash_key = "shortId"
+  hash_key     = "shortId"
 
   attribute {
     name = "shortId"
@@ -14,7 +14,7 @@ resource "aws_dynamodb_table" "url-dynamodb" {
   }
 
   tags = {
-    Name = "${var.project_name}-dynamodb"
+    Name        = "${var.project_name}-dynamodb"
     Environment = var.environment
   }
 }
