@@ -3,9 +3,7 @@ import os
 import random
 import string
 import boto3
-from urllib.parse import unquote
 
-# Initialize DynamoDB client
 dynamodb = boto3.resource("dynamodb")
 table = dynamodb.Table(os.environ["TABLE_NAME"])
 
@@ -132,4 +130,3 @@ def lambda_handler(event, context):
             "headers": {"Content-Type": "application/json"},
             "body": json.dumps({"error": "Route not found"}),
         }
-
